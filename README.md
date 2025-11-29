@@ -65,29 +65,31 @@ I will keep updating this repository as I learn new things.
 
 ## 📁 Repository Structure
 
+```
 spring-boot-Playground/
-│
-├── /concepts/
+├── concepts/
 │ ├── rest-basics/
 │ ├── validation-demo/
 │ ├── global-exception-handler/
 │ └── profiles-demo/
 │
-├── /microservices/
+├── microservices/
 │ ├── api-gateway/
 │ ├── eureka-server/
 │ ├── product-service/
 │ ├── order-service/
 │ └── config-server/
 │
-├── /docker/
+├── docker/
 │ ├── dockerfile-examples/
 │ └── compose-setups/
 │
-├── /kubernetes/
+├── kubernetes/
 │ ├── deployment-demo/
 │ ├── service-demo/
 │ ├── ingress-demo/
 │ └── configs/
 │
 └── README.md
+```
+

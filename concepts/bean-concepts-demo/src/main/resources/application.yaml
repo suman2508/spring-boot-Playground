@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: bean-concepts-demo
+payment:
+  enabled: card

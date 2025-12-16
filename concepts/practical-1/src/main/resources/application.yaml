@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: practical-1
+
+cake:
+  frosting: chocolate
+  syrup: strawberry

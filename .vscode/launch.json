@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Practical1Application<practical-1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bleedcode.practical_1.Practical1Application",
+            "projectName": "practical-1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

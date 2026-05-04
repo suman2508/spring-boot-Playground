@@ -68,28 +68,63 @@ I will keep updating this repository as I learn new things.
 ```
 spring-boot-Playground/
 ├── concepts/
-│ ├── rest-basics/
-│ ├── validation-demo/
-│ ├── global-exception-handler/
-│ └── profiles-demo/
+│   ├── practical-1/
+│   ├── spring-boot-starter-demo/
+│   └── bean-concepts-demo/
 │
-├── microservices/
-│ ├── api-gateway/
-│ ├── eureka-server/
-│ ├── product-service/
-│ ├── order-service/
-│ └── config-server/
-│
-├── docker/
-│ ├── dockerfile-examples/
-│ └── compose-setups/
-│
-├── kubernetes/
-│ ├── deployment-demo/
-│ ├── service-demo/
-│ ├── ingress-demo/
-│ └── configs/
+├── kafka-implementation/
+│   ├── user-service/
+│   ├── notification-service/
+│   └── KAFKA_IMPLEMENTATION.md
 │
 └── README.md
 ```
 
+---
+
+## 📦 Kafka Implementation
+
+The `kafka-implementation` folder contains a basic Spring Boot Kafka demo with two services:
+
+- `user-service`: exposes an HTTP endpoint and publishes messages to Kafka using `KafkaTemplate`.
+- `notification-service`: consumes messages from Kafka using `@KafkaListener`.
+
+The current Kafka flow is:
+
+```text
+HTTP request -> user-service -> Kafka topic -> notification-service -> log output
+```
+
+The demo uses a topic named `user-random-topic`, configured with three partitions. The user service sends keyed string messages to Kafka, and the notification service consumes them as part of the `notification-service` consumer group.
+
+For detailed implementation notes, see:
+
+[kafka-implementation/KAFKA_IMPLEMENTATION.md](kafka-implementation/KAFKA_IMPLEMENTATION.md)
+
+### Running The Kafka Demo
+
+Kafka must be running locally at:
+
+```text
+localhost:9092
+```
+
+Start the services separately:
+
+```bash
+cd kafka-implementation/user-service
+./mvnw spring-boot:run
+```
+
+```bash
+cd kafka-implementation/notification-service
+./mvnw spring-boot:run
+```
+
+Then publish a test message:
+
+```bash
+curl -X POST http://localhost:9050/users/test
+```
+
+The notification service should receive and log the Kafka messages.

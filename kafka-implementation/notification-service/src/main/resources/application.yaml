@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev
+    username: springboot
+    password: springboot
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    generate-ddl: true
+
+kafka:
+  topic:
+    user-random-topic: user-random-topic
+    
+server:
+  port: 9060
